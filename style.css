@@ -29,6 +29,7 @@ header {
   align-items: center;
 }
 
+/* hamburger */
 .nav-toggle {
   border: transparent;
   background: transparent;
@@ -72,7 +73,7 @@ header {
 .nav-toggle.is-active:hover span {
   background-color: cyan;
 }
-
+/* end hamburger */
 nav ul {
   display: flex;
   flex-direction: column;
@@ -88,6 +89,9 @@ nav {
 }
 nav li {
   list-style: none;
+  display: inline-block;
+  position: relative;
+  margin: 10px 20px;
 }
 nav a {
   margin: 20px 0;
@@ -95,6 +99,25 @@ nav a {
   text-decoration: none;
 }
 
+/* for underline */
+nav ul li a::after {
+  content: '';
+  height: 3px;
+  background: #ff00f4;
+  position: absolute;
+  /* left: 0; */
+  left: 50%;
+  bottom: -6px;
+  /* line is hidden */
+  width: 0;
+  transition: 0.5s;
+}
+
+/* show underline */
+nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
 .nav-open {
   height: 100vh;
 }
